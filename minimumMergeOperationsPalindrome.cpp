@@ -10,7 +10,7 @@ int main(){
 
     vector <int> vec(N);
 
-    for(int i=0;i<N;i++){             //Inputing array values
+    for(int i=0;i<N;i++){             
         cin>>vec[i];
     }
 
