@@ -16,31 +16,22 @@ ________________________________________________________________________________
 */
 string solve(int n) {
     int flag=0;
+    string final="";
     if(n<0){
         flag=1;
-        n=-n;
     }
-    int rem;
-    string final="";
+    n=abs(n);
     while(n>3){
-        rem = n%3;
-        cout<<rem;
-        string s="";
-        s+= to_string(rem);
-        cout<<"s->"<<s;
-        cout<<final;
-        s+=final;
-        final=s;
+        final+= to_string(n%3);
         n=n/3;
     }
-    cout<<endl;
-    string s="";
-    s+=to_string(n);
-    s+=final;
+    final+= to_string(n);
     if(flag){
-        string n="-";
-        n+=s;
-        return n;
+    final+='-';
+    reverse(final.begin(), final.end());   
     }
-    return s;
+    else{
+    reverse(final.begin(), final.end()); 
+    }    
+    return final;
 }
